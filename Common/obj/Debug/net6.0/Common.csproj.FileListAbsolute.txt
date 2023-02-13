@@ -10,3 +10,15 @@ E:\Projects\Test\DotNet6Architecture\CleanArch\Common\obj\Debug\net6.0\Common.dl
 E:\Projects\Test\DotNet6Architecture\CleanArch\Common\obj\Debug\net6.0\refint\Common.dll
 E:\Projects\Test\DotNet6Architecture\CleanArch\Common\obj\Debug\net6.0\Common.pdb
 E:\Projects\Test\DotNet6Architecture\CleanArch\Common\obj\Debug\net6.0\ref\Common.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\bin\Debug\net6.0\Common.deps.json
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\bin\Debug\net6.0\Common.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\bin\Debug\net6.0\Common.pdb
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.csproj.AssemblyReference.cache
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.AssemblyInfoInputs.cache
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.AssemblyInfo.cs
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.csproj.CoreCompileInputs.cache
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\refint\Common.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.pdb
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\ref\Common.dll

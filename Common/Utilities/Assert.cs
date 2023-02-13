@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Utilities
+namespace Common.Utilities;
+
+public static class Assert
 {
-    public static class Assert
+    public static void NotNull<T>(T obj,string name,string message=null) where T : class
     {
-        public static void NotNull<T>(T obj,string name,string message) where T : class
-        {
-            if(obj is null)
-                throw new ArgumentNullException($"{name} : {nameof(obj)}",message);
-        }
+        if(obj is null)
+            throw new ArgumentNullException($"{name} : {nameof(obj)}",message);
     }
 }

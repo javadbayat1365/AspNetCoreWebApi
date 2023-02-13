@@ -8,6 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebFramework\WebFramework.csproj" />
-  </ItemGroup>
+  </ItemGroup> 
 
 </Project>
