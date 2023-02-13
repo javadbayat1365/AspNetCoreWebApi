@@ -87,11 +87,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebFramework\\WebFramework.csproj",
+      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebFramework\\WebFramework.csproj",
       "projectName": "WebFramework",
-      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebFramework\\WebFramework.csproj",
+      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebFramework\\WebFramework.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebFramework\\obj\\",
+      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebFramework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -111,8 +111,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Services\\Services.csproj": {
-              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Services\\Services.csproj"
+            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj": {
+              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj"
             }
           }
         }

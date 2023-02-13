@@ -105,11 +105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebApi\\WebApi.csproj",
+      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebApi\\obj\\",
+      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -129,8 +129,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebFramework\\WebFramework.csproj": {
-              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebFramework\\WebFramework.csproj"
+            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebFramework\\WebFramework.csproj": {
+              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebFramework\\WebFramework.csproj"
             }
           }
         }

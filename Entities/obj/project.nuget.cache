@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8lfZ2ag2WNTbi2o6orMSfKoLWXeQaSCSClMBd3hiIcbdHcohNmCSua/VgzP8AD59PY+YeGS1Upw8CPZZ9F0bxA==",
+  "dgSpecHash": "Qn2MnVYJBwdIWqL3y9UGZkVa8O59H4Jp8NZxnUsBZ3JQjTyEHB0zevV58D6k3kxR3OR8L+gaboJ7NDDCBTHX9A==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Entities\\Entities.csproj",
+  "projectFilePath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

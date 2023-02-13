@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Common\\Common.csproj": {}
+    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Common\\Common.csproj": {
+    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Common\\Common.csproj",
+        "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Common\\Common.csproj",
+        "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Common\\obj\\",
+        "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

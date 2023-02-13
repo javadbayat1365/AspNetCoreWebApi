@@ -8,5 +8,6 @@ public class Class1
     {
         Class1 class1 = null;
         Assert.NotNull(class1, "", "");
+        //test github repo
     }
 }

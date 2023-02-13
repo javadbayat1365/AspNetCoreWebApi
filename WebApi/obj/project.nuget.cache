@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qYOqiOO4WjO115xVuQR0mm80pCl7gHg2asQ45ApnqEH58i5/+ZJ0efgJ6MHWb+xNubvL66y7+eDmFqXwxUDUPw==",
+  "dgSpecHash": "27o/AGv7ox0E1HpnJ7q3yNB5NWruULI4FCa7i7RvG7nNPkrNvwTUSFtRj1M5qAKHnXHxBYMeHcJMb0ctql5qVQ==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\WebApi\\WebApi.csproj",
+  "projectFilePath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -69,11 +69,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Services\\Services.csproj",
+      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Services\\Services.csproj",
+      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Services\\obj\\",
+      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -93,8 +93,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Data\\Data.csproj": {
-              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Data\\Data.csproj"
+            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj": {
+              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj"
             }
           }
         }

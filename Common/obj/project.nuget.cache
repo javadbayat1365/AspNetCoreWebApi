@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7RJD8HOXGMPWba5ijwhKSWH+wjqFz9ebEhmOBvCr3Jq9QyMx7CtYsgayHBRmk1QnerHlTmUpAvvJ2HlsRJS0Kw==",
+  "dgSpecHash": "XpQr4Ygebi2/6Gfs1P8Z9SU5vAkNAjFfURxD4At4uGIJDWDDFssKnFLEkxXvwZ/9HUch4yb+2pVFt5N+6b9V4A==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Common\\Common.csproj",
+  "projectFilePath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

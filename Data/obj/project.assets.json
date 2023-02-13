@@ -51,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Data\\Data.csproj",
+      "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Data\\Data.csproj",
+      "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Data\\obj\\",
+      "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -75,8 +75,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Entities\\Entities.csproj": {
-              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\Entities\\Entities.csproj"
+            "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj": {
+              "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj"
             }
           }
         }
