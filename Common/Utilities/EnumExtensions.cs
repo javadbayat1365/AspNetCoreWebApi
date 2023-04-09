@@ -17,8 +17,10 @@ public static class EnumExtensions
     public static string ToDisplay(this Enum input,DisplayProperty displayProperty = DisplayProperty.Name)
     {
         Assert.NotNull(input,nameof(input));
-        var attribute = input.GetType().GetField(input.ToString())
-                        .GetCustomAttributes(false).FirstOrDefault();
+        object? attribute = input.GetType()
+                                 .GetField(input.ToString())
+                                 .GetCustomAttributes(false)
+                                 .FirstOrDefault();
         if (attribute is null)
             return input.ToString();
         var propValue = attribute.GetType().GetProperty(displayProperty.ToString()).GetValue(attribute,null);
