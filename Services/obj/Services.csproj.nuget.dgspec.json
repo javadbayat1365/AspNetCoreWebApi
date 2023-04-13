@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj": {}
+    "E:\\projects\\github\\CleanArch\\Services\\Services.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj": {
+    "E:\\projects\\github\\CleanArch\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj",
+        "projectUniqueName": "E:\\projects\\github\\CleanArch\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\obj\\",
+        "projectPath": "E:\\projects\\github\\CleanArch\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\j.bayat\\.nuget\\packages\\",
+        "outputPath": "E:\\projects\\github\\CleanArch\\Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\j.bayat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,24 +69,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj": {
+    "E:\\projects\\github\\CleanArch\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj",
+        "projectUniqueName": "E:\\projects\\github\\CleanArch\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\obj\\",
+        "projectPath": "E:\\projects\\github\\CleanArch\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\j.bayat\\.nuget\\packages\\",
+        "outputPath": "E:\\projects\\github\\CleanArch\\Data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\j.bayat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj": {
-                "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj"
+              "E:\\projects\\github\\CleanArch\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\projects\\github\\CleanArch\\Entities\\Entities.csproj"
               }
             }
           }
@@ -134,24 +128,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj": {
+    "E:\\projects\\github\\CleanArch\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj",
+        "projectUniqueName": "E:\\projects\\github\\CleanArch\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Entities\\obj\\",
+        "projectPath": "E:\\projects\\github\\CleanArch\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\j.bayat\\.nuget\\packages\\",
+        "outputPath": "E:\\projects\\github\\CleanArch\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\j.bayat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -165,8 +156,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj": {
-                "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Common\\Common.csproj"
+              "E:\\projects\\github\\CleanArch\\Common\\Common.csproj": {
+                "projectPath": "E:\\projects\\github\\CleanArch\\Common\\Common.csproj"
               }
             }
           }
@@ -196,24 +187,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj": {
+    "E:\\projects\\github\\CleanArch\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj",
+        "projectUniqueName": "E:\\projects\\github\\CleanArch\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Services\\obj\\",
+        "projectPath": "E:\\projects\\github\\CleanArch\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\j.bayat\\.nuget\\packages\\",
+        "outputPath": "E:\\projects\\github\\CleanArch\\Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\j.bayat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -227,8 +215,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj": {
-                "projectPath": "E:\\Projects\\Test\\DotNet6Architecture\\CleanArch\\CleanArch\\Data\\Data.csproj"
+              "E:\\projects\\github\\CleanArch\\Data\\Data.csproj": {
+                "projectPath": "E:\\projects\\github\\CleanArch\\Data\\Data.csproj"
               }
             }
           }
@@ -258,7 +246,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
