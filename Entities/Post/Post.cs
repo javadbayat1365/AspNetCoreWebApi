@@ -9,7 +9,7 @@ using System.Text;
 using Entities.User;
 
 namespace Entities.Post;
-
+//[Table(name:"Post",Schema ="post")]
 public class Post:BaseEntity<int>
 {
     public string Title { get; set; }

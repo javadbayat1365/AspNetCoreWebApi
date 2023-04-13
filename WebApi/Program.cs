@@ -1,6 +1,20 @@
+using Data;
+using Entities.User;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var SqlProvider = builder.Configuration.GetConnectionString("SqlServer");
+builder.Services.AddDbContext<AppDBContext>(option => {
+    option.UseSqlServer(SqlProvider,
+        a => { 
+            a.CommandTimeout(60);
+            a.MigrationsAssembly(typeof(User).Assembly.ToString());
+        });
+});
+
+
 
 var app = builder.Build();
 

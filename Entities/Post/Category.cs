@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Post;
-
+//[Table(name:"MainCategory",Schema ="post")]
 public class Category:IEntity
 {
+    //[Column(name:"Id")]
     public Guid CategoryId { get; set; }
-    public string Name { get; set; }
+    public string CategoryName { get; set; }
 
     public Guid? ParentCategoryId { get; set; }
     [ForeignKey(nameof(ParentCategoryId))]
@@ -24,6 +25,6 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
         modelBuilder.HasOne(p => p.ParentCategory).WithMany(p => p.categories).HasForeignKey(p => p.ParentCategoryId);
         modelBuilder.Property(p => p.CategoryId).HasColumnName<Guid>("Id").IsRequired();
-        modelBuilder.Property(p => p.Name).HasMaxLength(100).IsRequired();
+        //modelBuilder.Property(p => p.Name).HasMaxLength(100);//.IsRequired();
     }
 }

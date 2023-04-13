@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Entities.Employee
 {
-    public class EmployeeGrade:IEntity
+    public class EmployeeGrade:BaseEntity
     {
-        public long Id { get; set; }
         public int Grade { get; set; }
 
     }

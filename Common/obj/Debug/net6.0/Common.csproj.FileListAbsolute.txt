@@ -34,3 +34,5 @@ E:\projects\github\CleanArch\Common\obj\Debug\net6.0\Common.dll
 E:\projects\github\CleanArch\Common\obj\Debug\net6.0\refint\Common.dll
 E:\projects\github\CleanArch\Common\obj\Debug\net6.0\Common.pdb
 E:\projects\github\CleanArch\Common\obj\Debug\net6.0\ref\Common.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\bin\Debug\net6.0\Common.runtimeconfig.json
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\Common\obj\Debug\net6.0\Common.genruntimeconfig.cache

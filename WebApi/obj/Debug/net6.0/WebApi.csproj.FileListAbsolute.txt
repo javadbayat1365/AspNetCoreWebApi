@@ -163,3 +163,5 @@ E:\projects\github\CleanArch\WebApi\obj\Debug\net6.0\refint\WebApi.dll
 E:\projects\github\CleanArch\WebApi\obj\Debug\net6.0\WebApi.pdb
 E:\projects\github\CleanArch\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 E:\projects\github\CleanArch\WebApi\obj\Debug\net6.0\ref\WebApi.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\Humanizer.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

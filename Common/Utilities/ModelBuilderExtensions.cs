@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Pluralize.NET;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,7 +87,22 @@ public static class ModelBuilderExtensions
         {
             IMutableProperty property = entityType.GetProperties().SingleOrDefault(p => p.Name.Equals(propertyName, StringComparison.OrdinalIgnoreCase));
             if (property != null && property.ClrType == propertyType)
-                property.Relational().DefaultValueSql = defaultValueSql;
+                property.SetDefaultValueSql(defaultValueSql);
+        }
+    }
+
+
+    /// <summary>
+    /// Pluralizing table name like Post to Posts or Person to People
+    /// </summary>
+    /// <param name="modelBuilder"></param>
+    public static void AddPluralizingTableNameConvention(this ModelBuilder modelBuilder)
+    {
+        Pluralizer pluralizer = new Pluralizer();
+        foreach (IMutableEntityType entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            string tableName = entityType.GetTableName();//.Relational().TableName;
+            entityType.SetTableName(pluralizer.Pluralize(tableName));
         }
     }
 }

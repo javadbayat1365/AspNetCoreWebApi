@@ -13,12 +13,11 @@ namespace Entities.User
 {
     public class User:BaseEntity
     {
-        //[MaxLength(100)]
         public string FullName { get; set; }
         public int Age { get; set; }
         public GenderEnum Gender { get; set; }
 
-        public ICollection<Post>  posts { get; set; }
+        public ICollection<Post.Post>  posts { get; set; }
     }
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
