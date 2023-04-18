@@ -13,6 +13,7 @@ namespace Entities.Common
     public class BaseEntity<TKey>:IEntity
     {
         [Required]
+        [Key]
         public TKey Id { get; set; }
     }
     public class BaseEntity:BaseEntity<long>

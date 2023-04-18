@@ -22,9 +22,9 @@ namespace Entities.User
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
         public void Configure(EntityTypeBuilder<User> modelBuilder)
-        {
+        { 
             modelBuilder.HasMany(p => p.posts).WithOne(p => p.User).HasForeignKey(p => p.AuthorId);
-            modelBuilder.Property(p => p.Age).HasMaxLength(100);
+            modelBuilder.Property(p => p.Age).HasMaxLength(2);
             modelBuilder.Property(p => p.FullName).HasMaxLength(100).IsRequired();
         }
     }

@@ -7,7 +7,7 @@ namespace Entities.Post;
 //[Table(name:"MainCategory",Schema ="post")]
 public class Category:IEntity
 {
-    //[Column(name:"Id")]
+    [Column(name: "Id")]
     public Guid CategoryId { get; set; }
     public string CategoryName { get; set; }
 

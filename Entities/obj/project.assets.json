@@ -1835,6 +1835,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\TaxCollectData.Library.0.0.12": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -1,4 +1,5 @@
 using Data;
+using Data.Contracts;
 using Entities.User;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,8 @@ builder.Services.AddDbContext<AppDBContext>(option => {
             a.MigrationsAssembly(typeof(User).Assembly.ToString());
         });
 });
+
+builder.Services.AddScoped(typeof(IGenericRepo<>),typeof(IGenericRepo<>));
 
 
 

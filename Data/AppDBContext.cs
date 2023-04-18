@@ -15,6 +15,7 @@ namespace Data
 {
     public class AppDBContext:DbContext
     {
+        public DbSet<User> Users { get; set; }
         public AppDBContext(DbContextOptions options):base(options)
         {
 
