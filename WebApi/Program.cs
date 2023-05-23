@@ -1,51 +1,31 @@
 using Data;
 using Data.Contracts;
-using Entities.User;
+using Data.Repositories;
 using Microsoft.EntityFrameworkCore;
+using WebFramework.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var SqlProvider = builder.Configuration.GetConnectionString("SqlServer");
+
+var SqlConnectionProvider = builder.Configuration.GetConnectionString("SqlServer");
+
 builder.Services.AddDbContext<AppDBContext>(option => {
-    option.UseSqlServer(SqlProvider,
+    option.UseSqlServer(SqlConnectionProvider,
         a => { 
             a.CommandTimeout(60);
-            a.MigrationsAssembly(typeof(User).Assembly.ToString());
+            a.MigrationsAssembly(typeof(AppDBContext).Assembly.ToString());
         });
 });
 
-builder.Services.AddScoped(typeof(IGenericRepo<>),typeof(IGenericRepo<>));
+builder.Services.AddScoped(typeof(IGenericRepo<>),typeof(GenericRepo<>));
 
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.ExceptionHadlerMiddle();
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-});
-
 app.Run();
-
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

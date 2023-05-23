@@ -1,4 +1,6 @@
-﻿using Data.Contracts;
+﻿using Common.Exceptions;
+using Common.Utilities;
+using Data.Contracts;
 using Entities.User;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,18 +13,35 @@ namespace Services.ControlServices
 {
     public class UserServices : GenericControlServices.GenericService<User>, IUserServices
     {
-        private readonly IGenericRepo<User> genericRepo;
+        private readonly IUserRepo UserRepo;
 
-        public UserServices(IGenericRepo<User> genericRepo) : base(genericRepo)
+        public UserServices(IUserRepo userRepo) : base(userRepo)
         {
-            this.genericRepo = genericRepo;
+            this.UserRepo = userRepo;
         }
+
+        public async Task<User> AddUserAsync(User user,CancellationToken cancellationToken)
+        {
+            if(ExistBeforByUserName(user.FullName).Result)
+            {
+                throw new AppException("نام کاربری تکراری است", Common.Enums.ApiResultStatusCode.AppError);
+            }
+           return base.Create(user, cancellationToken).Result;
+
+            return null;
+        }
+
         public override async Task Update(User user, CancellationToken cancellationToken)
         {
-            var sel = await genericRepo.GetByIdAsync(cancellationToken, user.Id);
+            var sel = await UserRepo.GetByIdAsync(cancellationToken, user.Id);
             sel.Age = user.Age;
             sel.FullName = user.FullName;
             base.Update(user, cancellationToken);
+        }
+
+        public async Task<bool> ExistBeforByUserName(string UserName)
+        {
+          return await  UserRepo.ExistBeforByUserName(UserName);
         }
     }
 }

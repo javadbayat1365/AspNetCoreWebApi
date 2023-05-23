@@ -1,6 +1,7 @@
 ﻿using Common.Enums;
 using Common.Utilities;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,21 +14,21 @@ namespace WebFramework.Api
     {
         public bool IsSuccess { get; set; }
         public ApiResultStatusCode statusCode { get; set; }
-        public string Message { get; set; }
+        public string? Message { get; set; }
         public ApiResult()
         {
 
         }
-        public ApiResult(bool isSuccess, ApiResultStatusCode statusCode, string message)
+        public ApiResult(bool isSuccess, ApiResultStatusCode statusCode, string? message=null)
         {
             IsSuccess = isSuccess;
             this.statusCode = statusCode;
-            Message = message ?? statusCode.ToDisplay(DisplayProperty.Name);
+            Message = message ?? statusCode.ToDisplay();
         }
         #region Implicit Operators
 
             public static implicit operator ApiResult(OkResult value)
-            => new ApiResult { IsSuccess = true,statusCode = ApiResultStatusCode.IsSuccess};
+            => new ApiResult { IsSuccess = true,statusCode = ApiResultStatusCode.Success};
         
         public static implicit operator ApiResult(NotFoundObjectResult notFoundObjectResult)
         {
@@ -63,19 +64,20 @@ namespace WebFramework.Api
         }
 
         public static implicit operator ApiResult(ContentResult contentResult)
-            =>new ApiResult(isSuccess : true, statusCode: ApiResultStatusCode.IsSuccess,message: contentResult.Content);
+            =>new ApiResult(isSuccess : true, statusCode: ApiResultStatusCode.Success,message: contentResult.Content);
             
         #endregion
     }
     public class ApiResult<TData>:ApiResult
         where TData : class
     {
-        public TData  Data { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public TData?  Data { get; set; }
         public ApiResult()
         {
 
         }
-        public ApiResult(TData data,ApiResultStatusCode statusCode, bool isSuccess, string message=null)
+        public ApiResult(TData? data,ApiResultStatusCode statusCode, bool isSuccess, string? message=null)
             :base(isSuccess, statusCode, message)
         {
             Data = data;
@@ -87,7 +89,7 @@ namespace WebFramework.Api
                 data : value,
                 isSuccess : true,
                 message : "",
-                statusCode : ApiResultStatusCode.IsSuccess
+                statusCode : ApiResultStatusCode.Success
             );
         }
 
@@ -95,8 +97,8 @@ namespace WebFramework.Api
             => new ApiResult<TData>()
         {
             IsSuccess = true,
-            Message = "",
-            statusCode = ApiResultStatusCode.IsSuccess,
+            Message = null,
+            statusCode = ApiResultStatusCode.Success,
              Data  = (TData)value.Value
         };
 
@@ -104,12 +106,12 @@ namespace WebFramework.Api
             => new ApiResult<TData>(
             data:null,
             isSuccess: true,
-            message : "",
-            statusCode : ApiResultStatusCode.IsSuccess
+            message : null,
+            statusCode : ApiResultStatusCode.Success
         );
 
         public static implicit operator ApiResult<TData>(ContentResult value)
-        =>  new ApiResult<TData> { IsSuccess =true, statusCode = ApiResultStatusCode.IsSuccess, Data = null, Message= value.Content };
+        =>  new ApiResult<TData> { IsSuccess =true, statusCode = ApiResultStatusCode.Success, Data = null, Message= value.Content };
 
         public static implicit operator ApiResult<TData>(BadRequestObjectResult result)
         {

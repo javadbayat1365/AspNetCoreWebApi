@@ -1,6 +1,7 @@
 ﻿using Common.Utilities;
 using Data.Contracts;
 using Entities.Common;
+using Entities.User;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Data.Repositories
         protected AppDBContext _dbContext;
         protected internal DbSet<TEntity> Entities;
         public virtual IQueryable<TEntity> Table => Entities;
+        //public virtual IQueryable<User> Table1 => _dbContext.Users.AsNoTracking();
         public virtual IQueryable<TEntity> TableNoTracking => Entities.AsNoTracking();
         public GenericRepo(AppDBContext appDBContext)
         {
@@ -26,6 +28,8 @@ namespace Data.Repositories
         #region Async Method
         public virtual async Task<TEntity> GetByIdAsync(CancellationToken cancellationToken, params object[] ids)
         {
+            //_dbContext.Users.FindAsync(ids);
+
             return await Entities.FindAsync(ids, cancellationToken);
         }
 
@@ -33,6 +37,7 @@ namespace Data.Repositories
         {
             Assert.NotNull(entity, nameof(entity));
            var sel = await Entities.AddAsync(entity, cancellationToken).ConfigureAwait(false);
+            //_dbContext.AddAsync(entity, cancellationToken);
             if (saveNow)
                 await _dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             return sel.Entity;
@@ -50,6 +55,7 @@ namespace Data.Repositories
         {
             Assert.NotNull(entity, nameof(entity));
             Entities.Update(entity);
+            //_dbContext.Update(entity);
             if (saveNow)
                 await _dbContext.SaveChangesAsync(cancellationToken);
         }
@@ -66,6 +72,7 @@ namespace Data.Repositories
         {
             Assert.NotNull(entity, nameof(entity));
             Entities.Remove(entity);
+            //_dbContext.Remove(entity);
             if (saveNow)
                 await _dbContext.SaveChangesAsync(cancellationToken);
         }

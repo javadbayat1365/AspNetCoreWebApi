@@ -5,6 +5,6 @@ namespace Services.ControlServices
 {
     public interface IUserServices: IGenericService<User>
     {
-        
+        Task<User> AddUserAsync(User user,CancellationToken cancellationToken);
     }
 }

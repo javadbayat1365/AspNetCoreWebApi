@@ -4,6 +4,7 @@ namespace Data.Contracts
 {
     public interface IUserRepo:IGenericRepo<User>
     {
-        Task<User?> GetByUsernameAndPassword(string username, int age, CancellationToken cancellationToken);
+       Task<User?> GetByUsernameAndPassword(string username, int age, CancellationToken cancellationToken);
+        Task<bool> ExistBeforByUserName(string UserName);
     }
 }

@@ -16,6 +16,11 @@ namespace Data.Repositories
         {
         }
 
+        public Task<bool> ExistBeforByUserName(string UserName)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<User?> GetByUsernameAndPassword(string username, int age, CancellationToken cancellationToken)
         {
            var selByContext = await _dbContext.Users.Where(w =>

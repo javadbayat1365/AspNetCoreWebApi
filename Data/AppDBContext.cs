@@ -112,5 +112,7 @@ namespace Data
                 }
             }
         }
+
+        //~AppDBContext() => Console.WriteLine($"The {typeof(DbContext)} finilazer is excuting!");
     }
 }

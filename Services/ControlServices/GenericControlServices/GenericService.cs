@@ -22,28 +22,28 @@ namespace Services.ControlServices.GenericControlServices
         {
             return await genericRepo.GetByIdAsync(cancellationToken, Id);
         }
-
+        
         public virtual async Task<List<TEntity>> GetAll(CancellationToken cancellationToken)
         {
             return await genericRepo.TableNoTracking.ToListAsync(cancellationToken);
         }
-        public virtual async Task<TEntity> Create(TEntity user, CancellationToken cancellationToken)
+        public virtual async Task<TEntity> Create(TEntity entity, CancellationToken cancellationToken)
         {
-           return await genericRepo.AddAsync(user, cancellationToken);
+           return await genericRepo.AddAsync(entity, cancellationToken);
         }
         public virtual async Task<bool> Delete(long Id, CancellationToken cancellationToken)
         {
             await genericRepo.DeleteAsync(Id, cancellationToken);
             return true;
         }
-        public virtual async Task<bool> Delete(TEntity user, CancellationToken cancellationToken)
+        public virtual async Task<bool> Delete(TEntity entity, CancellationToken cancellationToken)
         {
-            await genericRepo.DeleteAsync(user, cancellationToken);
+            await genericRepo.DeleteAsync(entity, cancellationToken);
             return true;
         }
-        public virtual async Task Update(TEntity user, CancellationToken cancellationToken)
+        public virtual async Task Update(TEntity entity, CancellationToken cancellationToken)
         {
-            await genericRepo.UpdateAsync(user, cancellationToken);
+            await genericRepo.UpdateAsync(entity, cancellationToken);
         }
     }
 }
