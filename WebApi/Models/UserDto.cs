@@ -10,7 +10,7 @@ namespace WebApi.Models
         public string FullName { get; set; }
         [Required]
         public int Age { get; set; }
-        public GenderEnum Gender { get; set; }
+        public GenderType Gender { get; set; }
 
         /// <summary>
         /// For Models that are not related to DataBase
@@ -24,7 +24,7 @@ namespace WebApi.Models
             {
                 yield return new ValidationResult("نام نمیتوند تست باشد", new[] {nameof(FullName) });
             }
-            if (Age > 31 && Gender == GenderEnum.Male)
+            if (Age > 31 && Gender == GenderType.Male)
             {
                 yield return new ValidationResult("برای مردها سن 31 سال به بالا معتبر نمی باشد", new[] {nameof(Age),nameof(Gender) });
             }

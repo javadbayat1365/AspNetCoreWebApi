@@ -1,4 +1,5 @@
-﻿using Data.Contracts;
+﻿using Common.Utilities;
+using Data.Contracts;
 using Entities.User;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,26 +22,38 @@ namespace Data.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<User?> GetByUsernameAndPassword(string username, int age, CancellationToken cancellationToken)
+        public async Task<User?> GetByUsernameAndPassword(string username, string password, CancellationToken cancellationToken)
         {
-           var selByContext = await _dbContext.Users.Where(w =>
-                             w.FullName == username
-                             && w.Age == age).FirstOrDefaultAsync(cancellationToken);
+            var PasswordHash = SecurityHelper.GetSha256Hash(password);
+           //var selByContext = await _dbContext.Users.Where(w =>
+           //                  w.UserName == username
+           //                  && w.PasswordHash == PasswordHash).FirstOrDefaultAsync(cancellationToken);
 
             //OR
 
             var selByEntities= await Entities.Where(w =>
-                             w.FullName == username
-                             && w.Age == age).FirstOrDefaultAsync(cancellationToken);
+                             w.UserName == username
+                             && w.PasswordHash == PasswordHash).FirstOrDefaultAsync(cancellationToken);
 
             //OR
-            var selByTable = await TableNoTracking
-                  .Where(w =>
-                             w.FullName == username
-                             && w.Age == age)
-                  .FirstOrDefaultAsync(cancellationToken);
+            //var selByTable = await TableNoTracking
+            //      .Where(w =>
+            //                 w.UserName == username
+            //                 && w.PasswordHash == PasswordHash)
+            //      .FirstOrDefaultAsync(cancellationToken);
 
-            return selByTable;
+            return selByEntities;
+        }
+
+        public Task UpdateSecuirtyStampAsync(User user, CancellationToken cancellationToken)
+        {
+            user.SecurityStamp = Guid.NewGuid();
+            return UpdateAsync(user, cancellationToken);
+        }
+        public Task UpdateLastLoginDateAsync(User user, CancellationToken cancellationToken)
+        {
+            user.LastLoginDate = DateTimeOffset.Now;
+            return UpdateAsync(user, cancellationToken);
         }
     }
 }

@@ -43,5 +43,15 @@ namespace Services.ControlServices
         {
           return await  UserRepo.ExistBeforByUserName(UserName);
         }
+
+        public Task<User> GetUserByUsernameAndPasswordAsync(string username, string password, CancellationToken cancellationToken)
+        {
+            var user = UserRepo.GetByUsernameAndPassword(username, password, cancellationToken);
+            if(user == null)
+            {
+                throw new NotFoundException("کاربر مورد نظر پیدا نشد");
+            }
+            return user;
+        }
     }
 }

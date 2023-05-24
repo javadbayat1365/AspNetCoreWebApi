@@ -21,5 +21,7 @@ namespace Common.Enums
         ApplicationError = 4,
         [Display(Name = "App Error")]
         AppError = 5,
+        [Display(Name = "UnAuthorized")]
+        UnAuthorized = 6
     }
 }
