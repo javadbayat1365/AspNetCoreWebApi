@@ -1,6 +1,5 @@
 ﻿using Common.Utilities;
-using Data.Contracts;
-using Entities.User;
+using Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

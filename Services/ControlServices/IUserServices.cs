@@ -1,4 +1,4 @@
-﻿using Entities.User;
+﻿using Entities;
 using Services.ControlServices.GenericControlServices;
 
 namespace Services.ControlServices

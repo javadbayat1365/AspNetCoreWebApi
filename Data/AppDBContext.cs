@@ -1,7 +1,6 @@
 ﻿using Common.Utilities;
+using Entities;
 using Entities.Common;
-using Entities.Post;
-using Entities.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;

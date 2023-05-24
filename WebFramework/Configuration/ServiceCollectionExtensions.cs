@@ -46,14 +46,16 @@ namespace WebFramework.Configuration
                     ValidAudience = jwtSettings.Audience,
 
                     ValidateIssuer = true, //default : false
-                    ValidIssuer = jwtSettings.Issuer,
-
-                    TokenDecryptionKey = new SymmetricSecurityKey(encryptionkey)
+                    ValidIssuer = jwtSettings.Issuer 
                 };
+
+                if (jwtSettings.EncryptionIsTrue)
+                    validationParameters.TokenDecryptionKey = new SymmetricSecurityKey(encryptionkey);
 
                 options.RequireHttpsMetadata = false;
                 options.SaveToken = true;
                 options.TokenValidationParameters = validationParameters;
+                
                 options.Events = new JwtBearerEvents
                 {
                     OnAuthenticationFailed = context =>
@@ -88,6 +90,7 @@ namespace WebFramework.Configuration
 
                         await userRepository.UpdateLastLoginDateAsync(user, context.HttpContext.RequestAborted);
                     },
+                    //When in request there is not token
                     OnChallenge = context =>
                     {
                         //var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));

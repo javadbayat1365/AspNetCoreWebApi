@@ -1,6 +1,5 @@
 ﻿using Common;
 using Entities;
-using Entities.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -38,9 +37,13 @@ namespace Services
                 NotBefore = DateTime.Now.AddMinutes(_siteSetting.JwtSettings.NotBeforeMinutes),
                 Expires = DateTime.Now.AddMinutes(_siteSetting.JwtSettings.ExpirationMinutes),
                 SigningCredentials = signingCredentials,
-                EncryptingCredentials = encryptingCredentials,
-                Subject = new ClaimsIdentity(claims)
+                Subject = new ClaimsIdentity(claims),
+                 
             };
+            //It's optional to Encript Jwt Token or not
+            if(_siteSetting.JwtSettings.EncryptionIsTrue)
+            descriptor.EncryptingCredentials = encryptingCredentials;
+
 
             //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             //JwtSecurityTokenHandler.DefaultMapInboundClaims = false;

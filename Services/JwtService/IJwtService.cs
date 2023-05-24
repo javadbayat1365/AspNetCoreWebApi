@@ -1,5 +1,5 @@
 ﻿using Entities;
-using Entities.User;
+using Entities;
 
 namespace Services
 {

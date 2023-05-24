@@ -1,18 +1,19 @@
-﻿using Common.Enums;
-using Entities.Common;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Entities.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Entities.User
+namespace Entities
 {
-    public class User:BaseEntity
+    public class User : BaseEntity
     {
+        public User()
+        {
+            IsActive = true;
+            SecurityStamp = Guid.NewGuid();
+        }
+        
         [Required]
         [StringLength(100)]
         public string UserName { get; set; }
@@ -28,15 +29,15 @@ namespace Entities.User
         public DateTimeOffset? LastLoginDate { get; set; }
         public Guid SecurityStamp { get; set; }
 
-        public ICollection<Post.Post>  posts { get; set; }
+        public ICollection<Post> Posts { get; set; }
     }
-    public class UserConfiguration : IEntityTypeConfiguration<User>
+
+    public enum GenderType
     {
-        public void Configure(EntityTypeBuilder<User> modelBuilder)
-        { 
-            modelBuilder.HasMany(p => p.posts).WithOne(p => p.User).HasForeignKey(p => p.AuthorId);
-            modelBuilder.Property(p => p.Age).HasMaxLength(2);
-            modelBuilder.Property(p => p.FullName).HasMaxLength(100).IsRequired();
-        }
+        [Display(Name = "مرد")]
+        Male = 1,
+
+        [Display(Name = "زن")]
+        Female = 2
     }
 }

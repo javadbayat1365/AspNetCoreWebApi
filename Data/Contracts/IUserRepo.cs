@@ -1,4 +1,6 @@
-﻿using Entities.User;
+﻿
+
+using Entities;
 
 namespace Data.Contracts
 {

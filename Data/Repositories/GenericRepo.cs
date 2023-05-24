@@ -1,7 +1,7 @@
 ﻿using Common.Utilities;
 using Data.Contracts;
 using Entities.Common;
-using Entities.User;
+using Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
