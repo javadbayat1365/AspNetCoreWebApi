@@ -1,6 +1,7 @@
 ﻿using Common.Utilities;
 using Entities;
 using Entities.Common;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -12,10 +13,10 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class AppDBContext:DbContext
+    public class AppDBContext:IdentityDbContext<User,Role,long>
     {
         public DbSet<User> Users { get; set; }
-        public AppDBContext(DbContextOptions options):base(options)
+        public AppDBContext(DbContextOptions<AppDBContext> options):base(options)
         {
 
         }
@@ -46,7 +47,6 @@ namespace Data
             #region Add All Fluent Api
 
             //Add Fluent Api Manually
-
             //modelBuilder.Entity<User>().Property(p => p.Age>10).HasDefaultValue(20);
             modelBuilder.RegisterEntityTypeConfiguration(EntitiesAssembly);
 
@@ -64,6 +64,7 @@ namespace Data
             modelBuilder.AddPluralizingTableNameConvention(); // city => cities , person => people
             #endregion
         }
+
         public override int SaveChanges()
         {
             _cleanString();

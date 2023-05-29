@@ -40,10 +40,10 @@ namespace WebFramework.Middlewares
                 string message = "";
             try
             {
-                if (!httpContext.Request.IsHttps)
-                {
-                    throw new ApplicationException();
-                }
+                //if (!httpContext.Request.IsHttps)
+                //{
+                //    throw new ApplicationException();
+                //}
                 await next(httpContext);
             }
             catch(ApplicationException ex)
@@ -75,8 +75,8 @@ namespace WebFramework.Middlewares
                     message = ex.Message;
                 }
                 logger.LogError(ex, ex.Message);
-                httpContext.Response.StatusCode = (int)ex.httpStatusCode;
-                var resultApi = new ApiResult(false, ex.statusCode,message) { };
+                httpContext.Response.StatusCode = (int)ex.HttpStatusCode;
+                var resultApi = new ApiResult(false,  Common.Enums.ApiResultStatusCode.AppError,message) { };
                 var json = JsonConvert.SerializeObject(resultApi);
                 
                 await httpContext.Response.WriteAsync(json);

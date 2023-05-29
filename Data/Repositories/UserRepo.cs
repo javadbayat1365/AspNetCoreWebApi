@@ -1,4 +1,5 @@
-﻿using Common.Utilities;
+﻿using Common.AutofacInterfaceAsMark;
+using Common.Utilities;
 using Data.Contracts;
 using Entities;
 using Microsoft.EntityFrameworkCore;
@@ -10,16 +11,16 @@ using System.Threading.Tasks;
 
 namespace Data.Repositories
 {
-    public class UserRepo : GenericRepo<User>, IUserRepo
+    public class UserRepo : GenericRepo<User>, IUserRepo,IScopedDependency
     {
         public UserRepo(AppDBContext appDBContext) 
             : base(appDBContext)
         {
         }
 
-        public Task<bool> ExistBeforByUserName(string UserName)
+        public async Task<bool> ExistBeforByUserName(string UserName)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public async Task<User?> GetByUsernameAndPassword(string username, string password, CancellationToken cancellationToken)
@@ -47,7 +48,7 @@ namespace Data.Repositories
 
         public Task UpdateSecuirtyStampAsync(User user, CancellationToken cancellationToken)
         {
-            user.SecurityStamp = Guid.NewGuid();
+            user.SecurityStamp = Guid.NewGuid().ToString();
             return UpdateAsync(user, cancellationToken);
         }
         public Task UpdateLastLoginDateAsync(User user, CancellationToken cancellationToken)

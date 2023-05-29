@@ -17,7 +17,7 @@ namespace Data.Repositories
         protected AppDBContext _dbContext;
         protected internal DbSet<TEntity> Entities;
         public virtual IQueryable<TEntity> Table => Entities;
-        //public virtual IQueryable<User> Table1 => _dbContext.Users.AsNoTracking();
+        //public virtual IQueryable<User> TableNoTracking => _dbContext.Users.AsNoTracking();
         public virtual IQueryable<TEntity> TableNoTracking => Entities.AsNoTracking();
         public GenericRepo(AppDBContext appDBContext)
         {

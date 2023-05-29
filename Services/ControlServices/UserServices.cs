@@ -1,4 +1,5 @@
-﻿using Common.Exceptions;
+﻿using Common.AutofacInterfaceAsMark;
+using Common.Exceptions;
 using Common.Utilities;
 using Data.Contracts;
 using Entities;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Services.ControlServices
 {
-    public class UserServices : GenericControlServices.GenericService<User>, IUserServices
+    public class UserServices : GenericControlServices.GenericService<User>, IUserServices, IScopedDependency
     {
         private readonly IUserRepo UserRepo;
 

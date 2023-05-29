@@ -7,7 +7,7 @@ namespace WebApi.Models
     {
         [Required]
         [MaxLength(100)]
-        public string FullName { get; set; }
+        public string? FullName { get; set; }
         [Required]
         public int Age { get; set; }
         public GenderType Gender { get; set; }

@@ -1,6 +1,10 @@
 ﻿using Common.Utilities;
+using Data;
+using Data.Contracts;
+using Data.Repositories;
 using Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Services;
@@ -19,20 +23,33 @@ public class UserController : Controller
 {
     private readonly IUserServices _userService;
     private readonly IJwtService _jwtService;
+    private readonly UserManager<User> _userManager;
+    private readonly IUserRepo _userRepo;
 
-    public UserController(IUserServices userService,IJwtService jwtService)
+    public UserController(IUserServices userService,IJwtService jwtService
+        ,UserManager<User> userManager
+        ,IUserRepo userRepo
+        )
     {
-        this._userService = userService;
-        this._jwtService = jwtService;
+        _userService = userService;
+        _jwtService = jwtService;
+        _userManager = userManager;
+        this._userRepo = userRepo;
     }
 
-    [HttpGet("{Id:long}")]
+    public void log()
+    {
+        _userRepo.GetByUsernameAndPassword("","",HttpContext.RequestAborted);
+    }
+
+    [HttpGet("{Id:long}")] //<==> Rout Constraint
     public async Task<User> GetById(long Id, CancellationToken cancellationToken) //Id with Routing => api/User/id
     {
         var userid = HttpContext.User.Identity.FindFirstValue(ClaimTypes.Name);
         var useridint = HttpContext.User.Identity?.GetUserId<int>();
         var userrole = HttpContext.User.Identity.FindFirstValue(ClaimTypes.Role);
 
+        _userRepo.ExistBeforByUserName("");
        return await _userService.GetById(Id, cancellationToken);
 
     }
@@ -41,7 +58,14 @@ public class UserController : Controller
     public async Task<string> GetToken(string username,string password,CancellationToken cancellationToken)
     {
         var user =await _userService.GetUserByUsernameAndPasswordAsync(username, password, cancellationToken);
-        var token = _jwtService.Generate(user);
+
+        #region UserManager Example
+            //var sel1 = await _userManager.GetUserAsync(HttpContext.User);
+            //var tokenResetPassword = await _userManager.GeneratePasswordResetTokenAsync(user);
+            //var result = await _userManager.ResetPasswordAsync(user,tokenResetPassword,"");
+        #endregion
+
+        var token =await _jwtService.GenerateAsync(user);
         return token;
     }
     [HttpGet("[action]")]
@@ -73,5 +97,17 @@ public class UserController : Controller
     public async Task<JsonResult> get()
     {
         return new JsonResult("");
+    }
+}
+
+public class test
+{
+    private readonly AppDBContext _appDBContext;
+    private readonly UserManager<User> _userManager;
+
+    public test(AppDBContext appDBContext,UserManager<User> userManager)
+    {
+        this._appDBContext = appDBContext;
+        this._userManager = userManager;
     }
 }

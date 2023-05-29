@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.AutofacInterfaceAsMark;
 using Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
@@ -11,15 +12,18 @@ using System.Text;
 
 namespace Services
 {
-    public class JwtService : IJwtService
+    public class JwtService : IJwtService, IScopedDependency
     {
         private readonly SiteSettings _siteSetting;
-        public JwtService(IOptionsSnapshot<SiteSettings> settings)
+        private readonly SignInManager<User> _signInManager;
+
+        public JwtService(IOptionsSnapshot<SiteSettings> settings,SignInManager<User> signInManager)
         {
             _siteSetting = settings.Value;
+            this._signInManager = signInManager;
         }
 
-        public string Generate(User user)
+        public async Task<string> GenerateAsync(User user)
         {
             var secretKey = Encoding.UTF8.GetBytes(_siteSetting.JwtSettings.SecretKey); // longer that 16 character
             var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKey), SecurityAlgorithms.HmacSha256Signature);
@@ -27,7 +31,7 @@ namespace Services
             var encryptionkey = Encoding.UTF8.GetBytes(_siteSetting.JwtSettings.Encryptkey); //must be 16 character
             var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey), SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
 
-            var claims = _getClaims(user);
+            var claims =await _getClaimsAsync(user);
 
             var descriptor = new SecurityTokenDescriptor
             {
@@ -58,24 +62,29 @@ namespace Services
             return jwt;
         }
 
-        private IEnumerable<Claim> _getClaims(User user)
+        private async Task<IEnumerable<Claim>> _getClaimsAsync(User user)
         {
-            //JwtRegisteredClaimNames.Sub
-            var securityStampClaimType = new ClaimsIdentityOptions().SecurityStampClaimType;
+            var claims = await _signInManager.ClaimsFactory.CreateAsync(user);
+            List<Claim> claimsToReturn = new List<Claim>();
+            claimsToReturn.Add(new Claim(ClaimTypes.MobilePhone,"09369364556"));
+            claimsToReturn.AddRange(claims.Claims);
+            return claimsToReturn;
 
-            var list = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.MobilePhone, "09123456987"),
-                new Claim(securityStampClaimType, user.SecurityStamp.ToString())
-            };
+            //var securityStampClaimType = new ClaimsIdentityOptions().SecurityStampClaimType;
 
-            var roles = new Role[] { new Role { Name = "Admin" } };
-            foreach (var role in roles)
-                list.Add(new Claim(ClaimTypes.Role, role.Name));
+            //var list = new List<Claim>
+            //{
+            //    new Claim(ClaimTypes.Name, user.UserName),
+            //    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            //    new Claim(ClaimTypes.MobilePhone, "09123456987"),
+            //    new Claim(securityStampClaimType, user.SecurityStamp.ToString())
+            //};
 
-            return list;
+            //var roles = new Role[] { new Role { Name = "Admin" } };
+            //foreach (var role in roles)
+            //    list.Add(new Claim(ClaimTypes.Role, role.Name));
+
+            //return list;
         }
     }
 }

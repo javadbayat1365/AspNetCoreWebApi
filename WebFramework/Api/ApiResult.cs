@@ -27,7 +27,7 @@ namespace WebFramework.Api
         }
         #region Implicit Operators
 
-            public static implicit operator ApiResult(OkResult value)
+        public static implicit operator ApiResult(OkResult value)
             => new ApiResult { IsSuccess = true,statusCode = ApiResultStatusCode.Success};
         
         public static implicit operator ApiResult(NotFoundObjectResult notFoundObjectResult)
@@ -88,19 +88,17 @@ namespace WebFramework.Api
             return new ApiResult<TData>(
                 data : value,
                 isSuccess : true,
-                message : "",
                 statusCode : ApiResultStatusCode.Success
             );
         }
 
         public static implicit operator ApiResult<TData>(OkObjectResult value)
-            => new ApiResult<TData>()
-        {
-            IsSuccess = true,
-            Message = null,
-            statusCode = ApiResultStatusCode.Success,
-             Data  = (TData)value.Value
-        };
+            => new ApiResult<TData>(
+            isSuccess : true,
+            message: null,
+            statusCode: ApiResultStatusCode.Success,
+             data: (TData)value.Value
+        );
 
         public static implicit operator ApiResult<TData>(OkResult value) 
             => new ApiResult<TData>(
@@ -111,7 +109,7 @@ namespace WebFramework.Api
         );
 
         public static implicit operator ApiResult<TData>(ContentResult value)
-        =>  new ApiResult<TData> { IsSuccess =true, statusCode = ApiResultStatusCode.Success, Data = null, Message= value.Content };
+        =>  new ApiResult<TData>(isSuccess: true, statusCode: ApiResultStatusCode.Success, data: null, message: value.Content);
 
         public static implicit operator ApiResult<TData>(BadRequestObjectResult result)
         {
