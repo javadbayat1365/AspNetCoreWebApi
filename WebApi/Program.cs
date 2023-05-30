@@ -1,13 +1,16 @@
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Common;
 using Data;
 using Data.Contracts;
 using Data.Repositories;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Services;
 using Services.ControlServices;
+using WebApi.Models;
 using WebFramework.Configuration;
 using WebFramework.Middlewares;
 
@@ -40,12 +43,29 @@ if (builder.Environment.IsProduction())
 {
     builder.Services.Configure<MvcOptions>(o => o.Filters.Add(new RequireHttpsAttribute()));
 }
+
+//initial automapper whereever you want
+Mapper.Initialize(config =>
+{
+    config.CreateMap<Post, PostDto>().ReverseMap()
+    .ForMember(f => f.Author,f => f.Ignore());
+});
+
 #endregion
 
 
 #region Middlewares
 
 var app = builder.Build();
+
+
+//Mapper.Initialize(config =>
+//{
+//    config.CreateMap<Post, PostDto>().ReverseMap()
+//        .ForMember(p => p.Author, opt => opt.Ignore())
+//        .ForMember(p => p.Category, opt => opt.Ignore());
+//});
+
 
 app.ExceptionHadlerMiddle();
 

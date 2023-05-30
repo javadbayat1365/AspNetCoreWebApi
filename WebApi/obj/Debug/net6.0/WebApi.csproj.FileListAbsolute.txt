@@ -195,3 +195,6 @@ E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0
 E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\Autofac.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+E:\Projects\Test\DotNet6Architecture\CleanArch\CleanArch\WebApi\bin\Debug\net6.0\AutoMapper.dll

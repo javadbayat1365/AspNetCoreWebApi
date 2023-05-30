@@ -16,6 +16,7 @@ using WebFramework.FilterActions;
 
 namespace WebApi.Controllers;
 
+[AllowAnonymous]
 [ApiController]
 [Route("api/[controller]")]
 [ApiResultFilter]
@@ -42,14 +43,15 @@ public class UserController : Controller
         _userRepo.GetByUsernameAndPassword("","",HttpContext.RequestAborted);
     }
 
-    [HttpGet("{Id:long}")] //<==> Rout Constraint
+    //[HttpGet("{Id:long}")] //<==> Rout Constraint
+    [HttpGet("[action]")]
     public async Task<User> GetById(long Id, CancellationToken cancellationToken) //Id with Routing => api/User/id
     {
-        var userid = HttpContext.User.Identity.FindFirstValue(ClaimTypes.Name);
+        var userName = HttpContext.User.Identity.FindFirstValue(ClaimTypes.Name);
         var useridint = HttpContext.User.Identity?.GetUserId<int>();
         var userrole = HttpContext.User.Identity.FindFirstValue(ClaimTypes.Role);
 
-        _userRepo.ExistBeforByUserName("");
+        _userRepo.ExistBeforByUserName(userName);
        return await _userService.GetById(Id, cancellationToken);
 
     }
